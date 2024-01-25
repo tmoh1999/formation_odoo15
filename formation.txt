@@ -1,0 +1,18 @@
+video 1 : creation module : 
+init : from . import models
+, 
+manifest : basic attributes 
+
+video 2 : add icon: static/description/icon.png
+video 3:  add model :
+    create models/ folder
+    create models/__init__.py file to import models py files
+    create models/modelname.py file
+      add class and attributes and methods
+      add access rights inside security/ir.model.access.csv : video 7
+video 4 5 6: create menu inside  views / menu.xml file and add xml code for menuitem 
+          and action code 
+          add action ref in  menuitem   
+
+video 5: add access ri
+    
