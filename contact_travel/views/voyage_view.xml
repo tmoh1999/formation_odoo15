@@ -5,11 +5,16 @@
             <field name="model">voyage</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="name" string="Nom du Voyage" filter_domain="['|',('name','ilike',self),('destination','ilike',self) ]"/>
+                <field name="name" string="Nom du Voyage" filter_domain="['|',('name','ilike',self),('destination','ilike',self) ]"/>
 					<field name="voyageur_id"/>
                     <field name="dateDepart"/>
                     <field name="destination"/>
                     <field name="montant"/>
+                    <filter name = "montantsup" string="MontantSup50000" domain="[('montant','>=','10000')]"></filter>
+                    <filter name = "montantinf" string="Montantinf10000" domain="[('montant','&lt;=','10000')]"></filter>
+                    <group expand ='0' string="Group By">
+                        <filter name = "montantgroupeby" string="montantgroupeby" context="{'group_by':'montant'}"></filter>
+                    </group>
                 </search>
             </field>
         </record>
