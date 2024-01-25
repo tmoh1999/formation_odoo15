@@ -8,7 +8,7 @@ class Voyage(models.Model):
     _description = "Voyage"
     _inherit = ["mail.thread","mail.activity.mixin"]
     #Voyage Model Class attributes 
-    name= fields.Char(string="Nom du Voyage")
+    name= fields.Char(string="Nom du Voyage",tracking=True)
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
     montant=fields.Float(string="Montant Voyage")
