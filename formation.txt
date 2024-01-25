@@ -42,6 +42,6 @@ video 20 : many2one field
 video 21 : Date/Datetime fields and default=fields.Date.context_today /  fields.Datetime.nowv
 video 22 : default value for fields
 
-
+video 23 : related field to another model
 
     
