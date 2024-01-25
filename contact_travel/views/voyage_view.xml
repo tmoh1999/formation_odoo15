@@ -17,6 +17,10 @@
                     <group expand ='0' string="Group By">
                         <filter name = "montantgroupeby" string="montantgroupeby" context="{'group_by':'montant'}"></filter>
                     </group>
+                    <searchpanel>
+                        <field name="voyageur_id" icon="fa-users" select="multi" enable_counters="1"/>
+                    </searchpanel>
+
                 </search>
             </field>
         </record>
