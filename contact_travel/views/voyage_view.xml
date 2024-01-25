@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_voyage_search" model="ir.ui.view">
+            <field name="name">voyage.search</field>
+            <field name="model">voyage</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Nom du Voyage" filter_domain="['|',('name','ilike',self),('destination','ilike',self) ]"/>
+					<field name="voyageur_id"/>
+                    <field name="dateDepart"/>
+                    <field name="destination"/>
+                    <field name="montant"/>
+                </search>
+            </field>
+        </record>
+		
+        <record id="view_voyage_tree" model="ir.ui.view">
+            <field name="name">voyage.tree</field>
+            <field name="model">voyage</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+					<field name="voyageur_id"/>
+                    <field name="dateDepart"/>
+                    <field name="destination"/>
+                    <field name="montant"/>
+                </tree>
+            </field>
+        </record>
+		
+        <record id="view_voyage_form" model="ir.ui.view">
+            <field name="name">voyage.form</field>
+            <field name="model">voyage</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+								<field name="voyageur_id"/>
+                            </group>
+                            <group>
+								<field name="dateDepart"/>
+								<field name="destination"/>
+                                <field name="montant"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_voyage" model="ir.actions.act_window">
+            <field name="name">Voyages</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">voyage</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new voyage
+                </p>
+            </field>
+        </record>
+
+    <menuitem id='menu_voyage'
+              name='Voyage'
+              parent="menu_contact_travel_root"
+			  action="action_voyage"
+              sequence='0'/>                                
+</odoo>
