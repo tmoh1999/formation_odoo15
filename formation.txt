@@ -1,3 +1,4 @@
+
 video 1 : creation module : 
 init : from . import models
 , 
@@ -30,6 +31,15 @@ video 15 : default value using context in action menu
 
 video 16: default filter :
         in action menu add :<field name="context">{'search_default_filtername|groupebyname':1}</field>
+video 17 : chatter code
+
+video 18 : tracking for field
+
+video 19 : search panel
+
+video 20 : many2one field
+
+
 
 
 
