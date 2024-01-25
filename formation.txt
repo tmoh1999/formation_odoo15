@@ -39,8 +39,8 @@ video 19 : search panel
 
 video 20 : many2one field
 
-video 20 : Date/Datetime fields and default=fields.Date.context_today /  fields.Datetime.now
-
+video 21 : Date/Datetime fields and default=fields.Date.context_today /  fields.Datetime.nowv
+video 22 : default value for fields
 
 
 
