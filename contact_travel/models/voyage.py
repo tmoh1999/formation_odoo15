@@ -17,7 +17,7 @@ class Voyage(models.Model):
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact')
-    voyageur_ph = fields.Char(related="voyageur_id.phone")
+    voyageur_phone = fields.Char(related="voyageur_id.phone")
     
 
     # The method create override the default version
