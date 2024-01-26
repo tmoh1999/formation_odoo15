@@ -37,6 +37,8 @@ video 18 : tracking for field
 
 video 19 : search panel
 
+video 23 :added related field 
+
 video 20 : many2one field
 
 video 21 : Date/Datetime fields and default=fields.Date.context_today /  fields.Datetime.nowv
