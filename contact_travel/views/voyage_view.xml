@@ -50,7 +50,7 @@
                             <group>
                                 <field name="name"/>
 								<field name="voyageur_id"/>
-                                <field name="voyageur_ph"/>
+                                <field name="voyageur_phone"/>
                                 <field name="active"/>
                             </group>
                             <group>
