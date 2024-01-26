@@ -6,16 +6,18 @@ from odoo.exceptions import UserError, ValidationError
 class Voyage(models.Model):
     _name = "voyage"
     _description = "Voyage"
-    
+    _inherit = ["mail.thread","mail.activity.mixin"]
     #Voyage Model Class attributes 
-    name= fields.Char(string="Nom du Voyage")
+    name= fields.Char(string="Nom du Voyage",tracking=True)
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
     montant=fields.Float(string="Montant Voyage")
+    active=fields.Boolean(string="Active",default="True")
     
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact')
+    voyageur_ph = fields.Char(related="voyageur_id.phone")
     
 
     # The method create override the default version

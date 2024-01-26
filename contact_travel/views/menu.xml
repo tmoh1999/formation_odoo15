@@ -2,5 +2,6 @@
 <odoo>
     <menuitem id='menu_contact_travel_root'
               name='Contact Travel'
+              web_icon="contact_travel,static/description/icon.png"
               sequence='0'/>                  
 </odoo>
