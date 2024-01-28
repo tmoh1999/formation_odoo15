@@ -52,10 +52,18 @@
                         <notebook>
                             <page string="Testnb" name="testnbnot">
                                 <group>
-                                    <button name="%(contact_travel.action_voyage)d" string="GoToVoyages" type="action" class="oe_highlight"/>
-                                    <field name="testnb"/>
-                                    <field name="testhtmlf"/>
+                                    <group>
+                                        <field name="testnb"/>
+                                        <field name="testhtmlf"/>
+                                    </group>
+                                    <group>
+                                        <button name="%(contact_travel.action_voyage)d" string="GoToVoyages" type="action"
+                                                confirm="Open Action?"
+                                                help="Open Voyage Action?"
+                                                class="oe_highlight"/>
+                                    </group>
                                 </group>
+
                             </page>
                         </notebook>
                         <div class="oe_chatter">
