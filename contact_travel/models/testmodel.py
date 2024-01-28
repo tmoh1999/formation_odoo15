@@ -17,4 +17,11 @@ class TestModel(models.Model):
     testnb=fields.Integer(string="Nbtest")
     testhtmlf=fields.Html(string="TestHTmlField")
 
+    priority=fields.Selection([
+        ("0","normal"),
+        ("1","low"),
+        ("2","High"),
+        ("3","Very High"),
+    ],String="Priority")
+
 
