@@ -57,3 +57,6 @@ video 28 :  Html field
 video 29 : hide create /delete/copy/edit button in module form/tree 
 
 video 30 : added stars priority to form
+
+video 41 : add avatars and show chats after clicking on many2one field in tree view
+
