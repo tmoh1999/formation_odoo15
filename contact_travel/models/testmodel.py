@@ -15,5 +15,6 @@ class TestModel(models.Model):
     phone=fields.Char(string="phone")
 
     testnb=fields.Integer(string="Nbtest")
+    testhtmlf=fields.Html(string="TestHTmlField")
 
 

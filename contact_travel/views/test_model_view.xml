@@ -42,7 +42,10 @@
                         </notebook>
                         <notebook>
                             <page string="Testnb" name="testnbnot">
-                                <field name="testnb"/>
+                                <group>
+                                    <field name="testnb"/>
+                                    <field name="testhtmlf"/>
+                                </group>
                             </page>
                         </notebook>
 
