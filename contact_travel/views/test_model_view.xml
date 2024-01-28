@@ -17,6 +17,9 @@
             <field name="model">test.model</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <field name="stbar" widget="statusbar" nolabel="1" options="{'clickable':'1'}"/>
+                    </header>
                     <sheet>
                         <div>
                             <h2>

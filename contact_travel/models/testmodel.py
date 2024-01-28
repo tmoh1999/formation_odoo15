@@ -24,4 +24,9 @@ class TestModel(models.Model):
         ("3","Very High"),
     ],String="Priority")
 
-
+    stbar=fields.Selection([
+        ("start","Started"),
+        ("running","Running"),
+        ("stopped","Stopped"),
+        ("done","Done"),
+    ],String="States")
