@@ -11,4 +11,9 @@ class TestModel(models.Model):
     namet=fields.Char(string="NameT",tracking=True)
     prdescription=fields.Text(string="Description")
 
+    email=fields.Char(string="email")
+    phone=fields.Char(string="phone")
+
+    testnb=fields.Integer(string="Nbtest")
+
 

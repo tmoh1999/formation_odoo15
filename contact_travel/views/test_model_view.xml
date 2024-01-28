@@ -28,13 +28,30 @@
                             </group>
 
                         </group>
+                        <notebook>
+                            <page  string="Email" name="emailnot">
+                                <group>
+                                    <field name="email"/>
+                                </group>
+                            </page>
+                            <page  string="Phone" name="phonenot">
+                                <group>
+                                    <field name="phone"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Testnb" name="testnbnot">
+                                <field name="testnb"/>
+                            </page>
+                        </notebook>
 
-                        <div class="oe_chatter">
-                            <field name="message_follower_ids" groups="base.group_user"/>
-                            <field name="activity_ids"/>
-                            <field name="message_ids"/>
-                        </div>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
             </field>
         </record>
