@@ -8,11 +8,11 @@
                            decoration-info="stbar in ('started')"
                            decoration-danger="stbar=='stopped'"
                            decoration-warning="stbar=='running'">
-                    <field name="namet"/>
-                    <field name="datebirth"/>
-					<field name="prdescription"/>
+                    <field name="namet"  optional="show"/>
+                    <field name="datebirth" optional="show"/>
+					<field name="prdescription"  optional="hide"/>
                     <field name="activity_ids" widget="list_activity"/>
-                    <field name="stbar"
+                    <field name="stbar"  optional="show"
                            decoration-success="stbar=='done'"
                            decoration-info="stbar in ('started')"
                            decoration-danger="stbar=='stopped'"
