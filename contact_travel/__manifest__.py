@@ -21,6 +21,7 @@ Odoo Test Module.
         "views/menu.xml",
         "views/voyage_view.xml",
         "views/contact_view_inherit.xml",
+        "views/test_model_view.xml"
     ],
     'demo':[],
     'application': True,
