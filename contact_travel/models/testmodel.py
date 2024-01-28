@@ -24,9 +24,16 @@ class TestModel(models.Model):
         ("3","Very High"),
     ],String="Priority")
 
-    stbar=fields.Selection([
-        ("started","Started"),
+    state=fields.Selection([
+        ("draft","Draft"),
         ("running","Running"),
         ("stopped","Stopped"),
         ("done","Done"),
-    ],String="States",default="started",required=True)
+    ],String="States",default="draft",required=True)
+
+    def action_run(self):
+        for rec in self:
+            rec.state="running"
+    def action_stop(self):
+        for rec in self:
+            rec.state="stopped"

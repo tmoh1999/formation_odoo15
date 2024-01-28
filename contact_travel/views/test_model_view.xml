@@ -4,19 +4,20 @@
             <field name="name">test.model.tree</field>
             <field name="model">test.model</field>
             <field name="arch" type="xml">
-                <tree decoration-success="stbar=='done'"
-                           decoration-info="stbar in ('started')"
-                           decoration-danger="stbar=='stopped'"
-                           decoration-warning="stbar=='running'">
+                <tree decoration-success="state=='done'"
+                           decoration-info="state in ('draft')"
+                           decoration-danger="state=='stopped'"
+                           decoration-warning="state=='running'"
+                           sample="1" multi_edit="1">
                     <field name="namet"  optional="show"/>
                     <field name="datebirth" optional="show"/>
 					<field name="prdescription"  optional="hide"/>
                     <field name="activity_ids" widget="list_activity"/>
-                    <field name="stbar"  optional="show"
-                           decoration-success="stbar=='done'"
-                           decoration-info="stbar in ('started')"
-                           decoration-danger="stbar=='stopped'"
-                           decoration-warning="stbar=='running'"
+                    <field name="state"  optional="show"
+                           decoration-success="state=='done'"
+                           decoration-info="state in ('draft')"
+                           decoration-danger="state=='stopped'"
+                           decoration-warning="state=='running'"
                            widget="badge" />
                 </tree>
             </field>
@@ -28,8 +29,10 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <field name="stbar" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
-                        statusbar_visible="started,running,done"/>
+                        <button name="action_run" string="Run" data-hotkey="i" type="object" class="oe_highlight" states="draft,stopped" />
+                        <button name="action_stop" string="Stop" type="object" class="oe_highlight" states="running"/>
+                        <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
+                        statusbar_visible="draft,running,done"/>
                     </header>
                     <sheet>
                         <div>
