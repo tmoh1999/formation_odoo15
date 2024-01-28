@@ -18,6 +18,8 @@ class TestModel(models.Model):
     testhtmlf=fields.Html(string="TestHTmlField")
     hide_active = fields.Boolean(string="hide_active", default="True")
 
+    vgs_ids=fields.Many2many('voyage',string="List Vgs")
+
     voyage_ids=fields.One2many("voyage","testmodel_id",string="Voyages")
     priority=fields.Selection([
         ("0","normal"),
