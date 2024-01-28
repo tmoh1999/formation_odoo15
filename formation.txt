@@ -46,4 +46,8 @@ video 22 : default value for fields
 
 video 23 : related field to another model
 
+video 24: compute fields
+
+video 25 : onchange function
+
     
