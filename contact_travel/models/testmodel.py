@@ -16,7 +16,9 @@ class TestModel(models.Model):
 
     testnb=fields.Integer(string="Nbtest")
     testhtmlf=fields.Html(string="TestHTmlField")
+    hide_active = fields.Boolean(string="hide_active", default="True")
 
+    voyage_ids=fields.One2many("voyage","testmodel_id",string="Voyages")
     priority=fields.Selection([
         ("0","normal"),
         ("1","low"),

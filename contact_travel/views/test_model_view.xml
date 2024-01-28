@@ -47,6 +47,7 @@
                             </group>
                             <group>
                                  <field name="prdescription"/>
+                                 <field name="hide_active"/>
                             </group>
 
                         </group>
@@ -78,6 +79,38 @@
                                 </group>
 
                             </page>
+
+
+                            <page string="VoyagesL" name="voyagesl">
+                                <field name="voyage_ids">
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                                <field name="voyageur_id"/>
+                                                <field name="voyageur_phone"/>
+                                                <field name="active"/>
+                                            </group>
+                                            <group>
+                                                <field name="dateDepart"/>
+                                                <field name="destination"/>
+                                                <field name="montant"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                    <tree  editable="bottom">
+                                        <field name="name"/>
+                                        <field name="voyageur_id"/>
+                                        <field name="dateDepart"/>
+                                        <field name="destination"/>
+                                        <field name="montant"/>
+                                        <field name="active" attrs="{'column_invisible':[('parent.hide_active','=',True)]}"/>
+                                    </tree>
+
+
+                                </field>
+                            </page>
+
                         </notebook>
                         <div class="oe_chatter">
                             <field name="message_follower_ids" groups="base.group_user"/>

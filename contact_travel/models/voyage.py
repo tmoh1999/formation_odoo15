@@ -13,12 +13,15 @@ class Voyage(models.Model):
     destination=fields.Char(string="Destination")
     montant=fields.Float(string="Montant Voyage")
     active=fields.Boolean(string="Active",default="True")
+
+
     
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact')
     voyageur_phone = fields.Char(related="voyageur_id.phone")
-    
+
+    testmodel_id=fields.Many2one("test.model",string="TestModelRef")
 
     # The method create override the default version
     ## to call <caclNivRecompense> method to change the <nivrecompense> 
