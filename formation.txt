@@ -53,3 +53,7 @@ video 25 : onchange function
 video 27 : notebooks pages   
 
 video 28 :  Html field
+
+video 29 : hide create /delete/copy/edit button in module form/tree 
+
+video 30 : added stars priority to form
