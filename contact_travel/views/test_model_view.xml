@@ -4,10 +4,20 @@
             <field name="name">test.model.tree</field>
             <field name="model">test.model</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree decoration-success="stbar=='done'"
+                           decoration-info="stbar in ('started')"
+                           decoration-danger="stbar=='stopped'"
+                           decoration-warning="stbar=='running'">
                     <field name="namet"/>
                     <field name="datebirth"/>
 					<field name="prdescription"/>
+                    <field name="activity_ids" widget="list_activity"/>
+                    <field name="stbar"
+                           decoration-success="stbar=='done'"
+                           decoration-info="stbar in ('started')"
+                           decoration-danger="stbar=='stopped'"
+                           decoration-warning="stbar=='running'"
+                           widget="badge" />
                 </tree>
             </field>
         </record>
