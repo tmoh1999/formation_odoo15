@@ -13,6 +13,7 @@ class Voyage(models.Model):
     destination=fields.Char(string="Destination")
     montant=fields.Float(string="Montant Voyage")
     active=fields.Boolean(string="Active",default="True")
+    image=fields.Image(string="Image")
 
 
     
