@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.voyage,access_voyage,contact_travel.model_voyage,base.group_user,1,1,1,1
 access.test.model,access_test_model,contact_travel.model_test_model,base.group_user,1,1,1,1
+access.test.trans.modell,access_test_trans_modell,contact_travel.model_test_trans_modell,base.group_user,1,1,1,1

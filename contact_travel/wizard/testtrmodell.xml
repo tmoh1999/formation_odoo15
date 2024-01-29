@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_test_trans_modell_form" model="ir.ui.view">
+            <field name="name">test.trans.modell.form</field>
+            <field name="model">test.trans.modell</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_test_trans" string="GotoVoyages" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    </footer>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_test_trans_modell" model="ir.actions.act_window">
+            <field name="name">TestTRans</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">test.trans.modell</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    <menuitem id='menu_test_trans_modell'
+              name='Test Trans Model'
+              parent="menu_contact_travel_root"
+			  action="action_test_trans_modell"
+              sequence='100'/>
+</odoo>
