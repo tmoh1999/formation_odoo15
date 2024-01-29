@@ -21,6 +21,7 @@ class Voyage(models.Model):
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact')
     voyageur_phone = fields.Char(related="voyageur_id.phone")
+    image2 = fields.Image(related="voyageur_id.image_1920")
 
     testmodel_id=fields.Many2one("test.model",string="TestModelRef")
 
