@@ -12,7 +12,7 @@ class Voyage(models.Model):
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
     refv = fields.Char(string="Reference")
-    montant=fields.Float(string="Montant Voyage")
+    montant=fields.Float(string="Montant Voyage",required=True)
     active=fields.Boolean(string="Active",default="True")
     image=fields.Image(string="Image")
 
@@ -20,7 +20,7 @@ class Voyage(models.Model):
     
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
-    voyageur_id=fields.Many2one('res.partner', string='Contact')
+    voyageur_id=fields.Many2one('res.partner', string='Contact',required=True)
     voyageur_phone = fields.Char(related="voyageur_id.phone")
     image2 = fields.Image(related="voyageur_id.image_1920")
 
@@ -36,7 +36,16 @@ class Voyage(models.Model):
         vals["refv"]=self.env['ir.sequence'].next_by_code('voyage')
         res=super(Voyage,self).create(vals)
         return res
-    
+
+    def write(self, vals):
+        if "montant" in vals.keys():
+            vals["voyageur_id"]=self.voyageur_id.id
+            print("FoondMont:",vals)
+            print(self.voyageur_id,self.destination)
+            self.caclNivRecompense(vals)
+
+        res=super(Voyage,self).write(vals)
+        return res
     # Method caclNivRecompense  takes as input a list of tuples
     ## correspend to the result after the creation of the voyage.
     # And calculates the sum of the <montant> of each voyages related to the user
@@ -49,7 +58,11 @@ class Voyage(models.Model):
         
         mont_glob=vals["montant"]
         for vg in field_voy_contact:
-            mont_glob+=vg.montant
+
+            if not self.id or self.id!=vg.id:
+                #print(vg.id, vg.montant, self.id)
+                mont_glob+=vg.montant
+        print("MontGLOB",mont_glob)
             
         recomp=""
         if mont_glob>=100000:
