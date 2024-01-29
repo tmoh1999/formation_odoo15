@@ -3,7 +3,6 @@
     <record id="voyage_1" model="voyage">
         <field name="name">V1</field>
         <field name="voyageur_id" ref="base.partner_admin"/>
-        <field name="montant">9.6</field>
+        <field name="montant">89898989</field>
     </record>
-    
 </odoo>

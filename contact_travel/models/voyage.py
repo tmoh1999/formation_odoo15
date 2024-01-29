@@ -11,6 +11,7 @@ class Voyage(models.Model):
     name= fields.Char(string="Nom du Voyage",tracking=True)
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
+    refv = fields.Char(string="Reference")
     montant=fields.Float(string="Montant Voyage")
     active=fields.Boolean(string="Active",default="True")
     image=fields.Image(string="Image")
@@ -32,6 +33,7 @@ class Voyage(models.Model):
     @api.model
     def create(self, vals):
         self.caclNivRecompense(vals)
+        vals["refv"]=self.env['ir.sequence'].next_by_code('voyage')
         res=super(Voyage,self).create(vals)
         return res
     

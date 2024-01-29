@@ -18,10 +18,11 @@ Odoo Test Module.
     ],
     'data':[
         "security/ir.model.access.csv",
+        "data/sequence_data.xml",
         "data/voyage_data.xml",
-        "wizard/testtrmodell.xml",
         "views/menu.xml",
         "views/voyage_view.xml",
+        "wizard/testtrmodell.xml",
         "views/contact_view_inherit.xml",
         "views/test_model_view.xml"
     ],
