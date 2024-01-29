@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="voyage_1" model="voyage">
+        <field name="name">V1</field>
+        <field name="voyageur_id" ref="base.partner_admin"/>
+        <field name="montant">9.6</field>
+    </record>
+    
+</odoo>

@@ -18,6 +18,7 @@ Odoo Test Module.
     ],
     'data':[
         "security/ir.model.access.csv",
+        "data/voyage_data.xml",
         "wizard/testtrmodell.xml",
         "views/menu.xml",
         "views/voyage_view.xml",

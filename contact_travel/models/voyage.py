@@ -42,8 +42,8 @@ class Voyage(models.Model):
     # After that based on the total sum and the rules it calculates and changes the value
     ## of the <nivrecompense> of the related res.partner contact.
     
-    def caclNivRecompense(self,vals):
-        field_voy_contact = self.env['voyage'].search([('voyageur_id','=',vals["voyageur_id"])])
+    def caclNivRecompense(self, vals):
+        field_voy_contact = self.env['voyage'].search([('voyageur_id','=', vals["voyageur_id"])])
         
         mont_glob=vals["montant"]
         for vg in field_voy_contact:
