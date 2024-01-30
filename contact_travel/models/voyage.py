@@ -1,3 +1,5 @@
+import datetime
+
 from odoo import api, fields, models, _, tools
 from odoo.osv import expression
 from odoo.exceptions import UserError, ValidationError
@@ -13,17 +15,28 @@ class Voyage(models.Model):
         res= super(Voyage,self).default_get(fields)
         res["montant"]=20980.9
         return res
-    #Voyage Model Class attributes 
+
+    #Voyage Model Class attributes
     name= fields.Char(string="Nom du Voyage",tracking=True)
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
-    refv = fields.Char(string="Reference")
+    refv = fields.Char(string="Reference",read_only=True)
     montant=fields.Float(string="Montant Voyage",default=1234.0,required=True)
     active=fields.Boolean(string="Active",default="True")
     image=fields.Image(string="Image")
 
+    _sql_constraints = [
+        ('destination','unique(destination)','Voyage Name must be unique')
+    ]
+    @api.constrains('dateDepart')
+    def _(self):
+        for record in self:
+            if record.dateDepart:
+                if record.dateDepart.year!=datetime.date.today().year:
+                    raise ValidationError(_("Wrong Year in field datePart."))
 
-    
+
+
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact',required=True)
@@ -31,6 +44,7 @@ class Voyage(models.Model):
     image2 = fields.Image(related="voyageur_id.image_1920")
 
     testmodel_id=fields.Many2one("test.model",string="TestModelRef")
+
 
     # The method create override the default version
     ## to call <caclNivRecompense> method to change the <nivrecompense> 

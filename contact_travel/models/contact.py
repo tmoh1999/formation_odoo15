@@ -49,5 +49,5 @@ class Contact(models.Model):
     #this result is used to change the value of the vlabel field to the lenght of the result.       
     def nbvoyage(self):
         field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
-        self.vlabel=str(len(field_ids)) 
+        self.vlabel=str(len(field_ids))
         

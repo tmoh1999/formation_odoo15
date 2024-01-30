@@ -50,8 +50,9 @@
                         <field name="image" widget="image" class="oe_avatar"/>
                         <group>
                             <group>
-                                <field name="refv"/>
                                 <field name="name"/>
+                                <field name="refv" class="oe_read_only"/>
+
 								<field name="voyageur_id"/>
                                 <field name="voyageur_phone"/>
                                 <field name="testmodel_id"/>
