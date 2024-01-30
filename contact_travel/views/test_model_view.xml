@@ -75,6 +75,7 @@
                                         <button name="%(contact_travel.action_voyage)d" string="GoToVoyages" type="action"
                                                 confirm="Open Action?"
                                                 help="Open Voyage Action?"
+                                                context="{'hide_montant':1}"
                                                 class="oe_highlight"/>
                                     </group>
                                 </group>

@@ -7,12 +7,18 @@ class Voyage(models.Model):
     _name = "voyage"
     _description = "Voyage"
     _inherit = ["mail.thread","mail.activity.mixin"]
+
+    @api.model
+    def default_get(self,fields):
+        res= super(Voyage,self).default_get(fields)
+        res["montant"]=20980.9
+        return res
     #Voyage Model Class attributes 
     name= fields.Char(string="Nom du Voyage",tracking=True)
     dateDepart=fields.Datetime(string="Date de départ", default=fields.Datetime.now)
     destination=fields.Char(string="Destination")
     refv = fields.Char(string="Reference")
-    montant=fields.Float(string="Montant Voyage",required=True)
+    montant=fields.Float(string="Montant Voyage",default=1234.0,required=True)
     active=fields.Boolean(string="Active",default="True")
     image=fields.Image(string="Image")
 
@@ -40,8 +46,6 @@ class Voyage(models.Model):
     def write(self, vals):
         if "montant" in vals.keys():
             vals["voyageur_id"]=self.voyageur_id.id
-            print("FoondMont:",vals)
-            print(self.voyageur_id,self.destination)
             self.caclNivRecompense(vals)
 
         res=super(Voyage,self).write(vals)
@@ -62,7 +66,7 @@ class Voyage(models.Model):
             if not self.id or self.id!=vg.id:
                 #print(vg.id, vg.montant, self.id)
                 mont_glob+=vg.montant
-        print("MontGLOB",mont_glob)
+
             
         recomp=""
         if mont_glob>=100000:
@@ -71,8 +75,9 @@ class Voyage(models.Model):
             recomp= "or"
         elif mont_glob>=20000:
             recomp= "argent"
-            
+
         self.env['res.partner'].search([('id','=',vals["voyageur_id"])]).nivrecompense=recomp
         
-            
+    def name_get(self):
+        return  [(record.id,"%s:%s" %(record.refv,record.name)) for record in self]
     

@@ -35,7 +35,7 @@
 					<field name="voyageur_id"/>
                     <field name="dateDepart"/>
                     <field name="destination"/>
-                    <field name="montant"/>
+                    <field name="montant" invisible="context.get('hide_montant')"/>
                     <field name="active"/>
                 </tree>
             </field>
