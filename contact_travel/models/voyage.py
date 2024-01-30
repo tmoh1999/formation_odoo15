@@ -46,6 +46,7 @@ class Voyage(models.Model):
     testmodel_id=fields.Many2one("test.model",string="TestModelRef")
 
 
+
     # The method create override the default version
     ## to call <caclNivRecompense> method to change the <nivrecompense> 
     ## of the related res.partner contact based on conditions.
@@ -94,4 +95,3 @@ class Voyage(models.Model):
         
     def name_get(self):
         return  [(record.id,"%s:%s" %(record.refv,record.name)) for record in self]
-    

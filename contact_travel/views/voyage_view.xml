@@ -11,11 +11,12 @@
                     <field name="destination"/>
                     <field name="montant"/>
                     <field name="active"/>
-                    <filter name = "montantsup" string="MontantSup50000" domain="[('montant','>=',50000.0)]"></filter>
+                    <filter name = "montantsup" string="MontantSup50000" domain="[('montant','>=',4.0)]"></filter>
                     <filter name = "montantinf" string="Montantinf10000" domain="[('montant','&lt;=',10000.0)]"></filter>
                     <filter name = "arch" string="Archived" domain="[('active','=',False)]"></filter>
                     <group expand ='0' string="Group By">
                         <filter name = "montantgroupeby" string="montantgroupeby" context="{'group_by':'montant'}"></filter>
+                        <filter name = "voyageuridgroupby" string="voyageuridgroupby" context="{'group_by':'voyageur_id'}"></filter>
                     </group>
                     <searchpanel>
                         <field name="voyageur_id" icon="fa-users" select="multi" enable_counters="1"/>
@@ -37,6 +38,12 @@
                     <field name="destination" />
                     <field name="montant" invisible="context.get('hide_montant')"/>
                     <field name="active"/>
+                    <groupby name="voyageur_id">
+                        <button name="groupby_button_test" string="click" type="object"
+                                class="oe_highlight"/>
+
+                    </groupby>
+
                 </tree>
             </field>
         </record>
@@ -103,7 +110,7 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">voyage</field>
             <field name="view_mode">tree,form,activity</field>
-            <field name="context">{'search_default_montantsup':1}</field>
+            <field name="context">{'search_default_montantsup':1,'search_default_voyageuridgroupby':1}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                     Create a new voyage

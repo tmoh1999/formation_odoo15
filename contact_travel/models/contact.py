@@ -16,7 +16,7 @@ class Contact(models.Model):
     
     #Field to display number voyages of the res.partner contact
     vlabel = fields.Char(string="0" ,compute="nbvoyage")
-    
+
     
     
     
@@ -50,4 +50,6 @@ class Contact(models.Model):
     def nbvoyage(self):
         field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
         self.vlabel=str(len(field_ids))
+    def groupby_button_test(self):
+        print("click group by",self.id)
         
