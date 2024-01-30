@@ -34,7 +34,7 @@
                     <field name="name"/>
 					<field name="voyageur_id"/>
                     <field name="dateDepart"/>
-                    <field name="destination"/>
+                    <field name="destination" />
                     <field name="montant" invisible="context.get('hide_montant')"/>
                     <field name="active"/>
                 </tree>
@@ -48,11 +48,14 @@
                 <form>
                     <sheet>
                         <field name="image" widget="image" class="oe_avatar"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="refv" class="oe_read_only"/>
+                            </h1>
+                        </div>
                         <group>
                             <group>
                                 <field name="name"/>
-                                <field name="refv" class="oe_read_only"/>
-
 								<field name="voyageur_id"/>
                                 <field name="voyageur_phone"/>
                                 <field name="testmodel_id"/>
@@ -60,7 +63,7 @@
                             </group>
                             <group>
 								<field name="dateDepart"/>
-								<field name="destination"/>
+								<field name="destination" attrs="{'invisible':[('active','=',False)]}"/>
                                 <field name="montant"/>
                             </group>
                         </group>
