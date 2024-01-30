@@ -64,7 +64,7 @@
                             <group>
                                 <field name="name"/>
 								<field name="voyageur_id"/>
-                                <field name="voyageur_phone"/>
+                                <field name="voyageur_phone" widget="phone"/>
                                 <field name="testmodel_id"/>
                                 <field name="active"/>
                             </group>

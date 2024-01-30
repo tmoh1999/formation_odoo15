@@ -55,12 +55,12 @@
                         <notebook>
                             <page  string="Email" name="emailnot">
                                 <group>
-                                    <field name="email"/>
+                                    <field name="email" widget="email"/>
                                 </group>
                             </page>
                             <page  string="Phone" name="phonenot">
                                 <group>
-                                    <field name="phone"/>
+                                    <field name="phone" widget="phone"/>
                                 </group>
                             </page>
                         </notebook>
