@@ -24,9 +24,17 @@ class Voyage(models.Model):
     montant=fields.Float(string="Montant Voyage",default=1234.0,required=True)
     active=fields.Boolean(string="Active",default="True")
     image=fields.Image(string="Image")
+    company_id = fields.Many2one(
+        'res.company', string='Company',
+        default=lambda self: self.env.company)
+
+    currency_id = fields.Many2one('res.currency', string='Account Currency' ,related="company_id.currency_id")
+    monfield=fields.Monetary(string="MonField",default=199.9)
+
+
 
     _sql_constraints = [
-        ('destination','unique(destination)','Voyage Name must be unique')
+        ('name','unique(name)','Voyage Name must be unique')
     ]
     @api.constrains('dateDepart')
     def _(self):
@@ -34,6 +42,7 @@ class Voyage(models.Model):
             if record.dateDepart:
                 if record.dateDepart.year!=datetime.date.today().year:
                     raise ValidationError(_("Wrong Year in field datePart."))
+
 
 
 

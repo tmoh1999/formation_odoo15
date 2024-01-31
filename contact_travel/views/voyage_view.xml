@@ -37,6 +37,8 @@
                     <field name="dateDepart"/>
                     <field name="destination" />
                     <field name="montant" invisible="context.get('hide_montant')"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="monfield"/>
                     <field name="active"/>
                     <groupby name="voyageur_id">
                         <button name="groupby_button_test" string="click" type="object"
@@ -104,12 +106,23 @@
                 </activity>
             </field>
         </record>
+        <record id="view_voyage_calendar" model="ir.ui.view">
+            <field name="name">voyage.tree</field>
+            <field name="model">voyage</field>
+            <field name="arch" type="xml">
+                <calendar string="Voyages" date_start="dateDepart">
+                    <field name="voyageur_id" filters="1" avatar_field="1"/>
+                    <field name="destination"/>
+                </calendar>
+            </field>
+        </record>
+
 
         <record id="action_voyage" model="ir.actions.act_window">
             <field name="name">Voyages</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">voyage</field>
-            <field name="view_mode">tree,form,activity</field>
+            <field name="view_mode">tree,form,calendar,activity</field>
             <field name="context">{'search_default_montantsup':1,'search_default_voyageuridgroupby':1}</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
