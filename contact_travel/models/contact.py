@@ -54,6 +54,7 @@ class Contact(models.Model):
         print("click group by",self.id)
         return {
             "type":"ir.actions.act_url",
+            "target":"new",
             "url":"https://www.google.com"
         }
         
