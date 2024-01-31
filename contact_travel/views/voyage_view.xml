@@ -41,7 +41,7 @@
                     <field name="monfield"/>
                     <field name="active"/>
                     <groupby name="voyageur_id">
-                        <button name="groupby_button_test" string="click" type="object"
+                        <button name="groupby_button_test" string="Open Google" type="object"
                                 class="oe_highlight"/>
 
                     </groupby>

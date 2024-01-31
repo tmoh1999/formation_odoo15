@@ -33,6 +33,8 @@ class Voyage(models.Model):
 
 
 
+
+
     _sql_constraints = [
         ('name','unique(name)','Voyage Name must be unique')
     ]

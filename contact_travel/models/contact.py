@@ -52,4 +52,8 @@ class Contact(models.Model):
         self.vlabel=str(len(field_ids))
     def groupby_button_test(self):
         print("click group by",self.id)
+        return {
+            "type":"ir.actions.act_url",
+            "url":"https://www.google.com"
+        }
         
