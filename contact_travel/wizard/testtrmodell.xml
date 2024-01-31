@@ -12,7 +12,7 @@
                         </group>
                     </sheet>
                     <footer>
-                        <button name="action_test_trans" string="GotoVoyages" type="object" class="btn-primary" data-hotkey="q"/>
+                        <button name="action_test_trans" string="TestORMmethods" type="object" class="btn-primary" data-hotkey="q"/>
                         <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
                     </footer>
 
