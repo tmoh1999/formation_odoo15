@@ -7,11 +7,11 @@
                         <span>Liste Voyages :</span>
                     </p>
                     <t t-foreach="docs" t-as="o">
-                        <div class="oe_structure" style="margin-bottom:30px;">
+                        <div class="oe_structure" style="margin-bottom:10px;">
                             <div class="row">
                                 <div class="col-xs-8">
                                     <table class="table table-condensed">
-                                        <tr class="row">
+                                        <tr>
                                             <td width="40%" style="padding-top:0px;">
 
                                                 <div style="
