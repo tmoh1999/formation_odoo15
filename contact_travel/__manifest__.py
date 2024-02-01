@@ -24,7 +24,8 @@ Odoo Test Module.
         "views/voyage_view.xml",
         "wizard/testtrmodell.xml",
         "views/contact_view_inherit.xml",
-        "views/test_model_view.xml"
+        "views/test_model_view.xml",
+        "data/email_template_data.xml"
     ],
     'demo':[],
     'application': True,
