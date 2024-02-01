@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_voyage_card">
+        <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <p style="width: 100%;text-align:center;font-size:30px;margin-bottom:50px;margin-top:0px;">
+                        <span>Liste Voyages :</span>
+                    </p>
+                    <t t-foreach="docs" t-as="o">
+                        <div class="oe_structure" style="margin-bottom:30px;">
+                            <div class="row">
+                                <div class="col-xs-8">
+                                    <table class="table table-condensed">
+                                        <tr class="row">
+                                            <td width="40%" style="padding-top:0px;">
+
+                                                <div style="
+                height: 250px;
+                position:relative;
+
+                                                ">
+                                                    <img t-if="not o.image2"
+                                                         t-att-src="'/web/static/img/placeholder.png'"
+                                                         height="220"  width="200" border="1"
+                                                         style="
+                margin:0;
+                position:absolute;
+                top: 9%;
+                left: 7%;
+                                                        "
+                                                    />
+                                                    <img t-if="o.image2"
+                                                         t-att-src="'data:image2/png;base64,%s' % to_text(o.image2)"
+                                                         height="220"  width="200" border="1"
+                                                         style="
+                margin:0;
+                position:absolute;
+                top: 9%;
+                left: 7%;
+                                                        "
+                                                    />
+                                                </div>
+
+                                            </td>
+                                            <td width="60%">
+                                                <table>
+                                                    <tr>
+                                                        <td colspan="3" class="text-center">
+                                                            <span t-field="o.voyageur_id.name"/>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <span>
+                                                                <strong>Voyage Name</strong>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span>:</span>
+                                                        </td>
+                                                        <td>
+                                                            <span t-field="o.name"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span>
+                                                                <strong>Destination</strong>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span>:</span>
+                                                        </td>
+                                                        <td>
+                                                            <span t-field="o.destination"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span>
+                                                                <strong>Montant</strong>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span>:</span>
+                                                        </td>
+                                                        <td>
+                                                            <span t-field="o.montant"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <span>
+                                                                <strong>Date Depart</strong>
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span>:</span>
+                                                        </td>
+                                                        <td>
+                                                            <span t-field="o.dateDepart"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                               </div>
+                           </div>
+                        </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
+

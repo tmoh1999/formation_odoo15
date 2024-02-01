@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- QWeb Reports -->
+        <record id="report_voyage" model="ir.actions.report">
+            <field name="name">Voyages Report List</field>
+            <field name="model">voyage</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">contact_travel.report_voyage_card</field>
+            <field name="report_file">contact_travel.report_voyage_card</field>
+            <field name="binding_model_id" ref="model_voyage"/>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>
