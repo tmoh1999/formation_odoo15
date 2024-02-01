@@ -41,3 +41,8 @@ class TestModel(models.Model):
     def action_stop(self):
         for rec in self:
             rec.state="stopped"
+    def action_send_email(self):
+        print("sending mail")
+        template_email=self.env.ref('contact_travel.test_model_email_template')
+        for rec in self:
+            template_email.send_mail(rec.id,force_send=True)

@@ -29,6 +29,7 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                        <button name="action_send_email" string="Send Email" type="object" class="oe_highlight"/>
                         <button name="action_run" string="Run" data-hotkey="i" type="object" class="oe_highlight" states="draft,stopped" />
                         <button name="action_stop" string="Stop" type="object" class="oe_highlight" states="running"/>
                         <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
