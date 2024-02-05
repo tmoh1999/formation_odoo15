@@ -15,7 +15,8 @@ Odoo Test Module.
     'depends':[
         'contacts',
         'mail',
-        "sale"
+        "sale",
+        "purchase"
     ],
     'data':[
         "security/ir.model.access.csv",
@@ -30,7 +31,8 @@ Odoo Test Module.
         "data/email_template_data.xml",
         "report/report_voyage_card_template.xml",
         "report/report.xml",
-        "views/sale_order_inherit.xml"
+        "views/sale_order_inherit.xml",
+        "views/purchase_order_inherit.xml"
     ],
     'demo':[],
     'application': True,

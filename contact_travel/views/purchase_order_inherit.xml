@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="view_purchase_order_form_inherit_testm" model="ir.ui.view">
+			<field name="name">purchase.order.inherit</field>
+			<field name="model">purchase.order</field>
+			<field name="inherit_id" ref="purchase.purchase_order_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='partner_ref']" position="after">
+					<field name="hide_active"/>
+				</xpath>
+
+				<xpath expr="//form/header/button[@name='button_confirm'][2]" position="attributes">
+					<attribute name="attrs">{'invisible': ['|',('hide_active','=', True)]}</attribute>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>
