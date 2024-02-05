@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model="ir.module.category" id="module_contact_travel_category">
+            <field name="name">Travels Management</field>
+            <field name="description">Category For Travels</field>
+        </record>
+        <record id="group_contact_travel_grp1" model="res.groups">
+            <field name="name">Travels</field>
+            <field name="category_id" ref="module_contact_travel_category"/>
+        </record>
+        <record id="group_contact_travel_grp2" model="res.groups">
+            <field name="name">TravelsCost</field>
+            <field name="category_id" ref="module_contact_travel_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_contact_travel_grp1'))]"/>
+        </record>
+    </data>
+
+</odoo>
