@@ -67,6 +67,7 @@
                         <button name="action_send_email" string="Send Email" type="object" class="oe_highlight"/>
                         <button name="action_run" string="Run" data-hotkey="i" type="object" class="oe_highlight" states="draft,stopped" />
                         <button name="action_stop" string="Stop" type="object" class="oe_highlight" states="running"/>
+                        <button name="action_stop" string="TestB" type="object" class="oe_highlight" attrs="{'invisible':[('hide_active','=',True)]}"/>
                         <field name="state" widget="statusbar" nolabel="1" options="{'clickable':'1'}"
                         statusbar_visible="draft,running,done"/>
                     </header>
@@ -85,6 +86,7 @@
                                  <field name="prdescription"/>
                                  <field name="vgs_ids" widget="many2many_tags"/>
                                  <field name="hide_active"/>
+                                <field name="hide_active2" invisible="0"/>
                             </group>
 
                         </group>

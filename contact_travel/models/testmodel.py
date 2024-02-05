@@ -16,7 +16,8 @@ class TestModel(models.Model):
 
     testnb=fields.Integer(string="Nbtest")
     testhtmlf=fields.Html(string="TestHTmlField")
-    hide_active = fields.Boolean(string="hide_active", default="True")
+    hide_active = fields.Boolean(string="hide_active", default=True)
+    hide_active2 = fields.Boolean(string="hide_active", default=True)
 
     vgs_ids=fields.Many2many('voyage',string="List Vgs")
 
