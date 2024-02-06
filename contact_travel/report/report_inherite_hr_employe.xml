@@ -7,7 +7,7 @@
             </p>
         </xpath>
         <xpath expr="//td[1]" position="attributes">
-            <attribute name="style">width:33%;display:none</attribute>
+            <attribute name="style">width:33%;display:none;</attribute>
         </xpath>
     </template>
 </odoo>

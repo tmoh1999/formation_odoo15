@@ -11,7 +11,7 @@ class Contact(models.Model):
     ##  if nivrecompense>20000:  le client atteint le niveau Argent
     ##  if nivrecompense>50000:  le client atteint le niveau Or
     ##  if nivrecompense>100000: le client atteint le niveau Platin
-        
+
     nivrecompense = fields.Selection([('argent','Argent'),('or','Or'),('platin','Platin'),],string="Niveaux de récompense")
     
     #Field to display number voyages of the res.partner contact
@@ -25,7 +25,16 @@ class Contact(models.Model):
     # After that it search for the id of the view tree  using the name voyage.tree.
     # Finaly the method returns an action ir.actions.act_window the displays
     ## all of the voyages of the contact in a tree view.
-            
+
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False, submenu=False):
+        resx = super(Contact, self).fields_view_get(view_id=view_id, view_type=view_type, toolbar=toolbar, submenu=submenu)
+        res = self.env()['ir.ui.view'].search([('name', '=', 'res.partner.inherit')])
+        print(res.priority)
+        print(res.get_metadata())
+        if res.exists():
+            res.priority = 1
+        # Your initialization code here
+        return resx
     def liste_voyages(self):
         field_ids = self.env['voyage'].search([('voyageur_id','=',self.id)]).ids
         

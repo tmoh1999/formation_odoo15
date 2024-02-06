@@ -48,6 +48,7 @@ class Voyage(models.Model):
 
 
 
+
     #Many2one attribute : a link between res.partner Model and Voyage Model 
     #res.partner Contact can have a list of voyages .     
     voyageur_id=fields.Many2one('res.partner', string='Contact',required=True)
