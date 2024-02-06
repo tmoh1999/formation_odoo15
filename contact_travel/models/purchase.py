@@ -6,6 +6,11 @@ from odoo.exceptions import UserError, ValidationError
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
     hide_active = fields.Boolean(string="hide_active", default=True)
+
+    @api.onchange('hide_active')
+    def onchange_partner_id(self):
+        print("Changed")
+
     def action_quotation_send_s(self):
         return
 

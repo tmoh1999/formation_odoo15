@@ -5,4 +5,14 @@
         <field name="voyageur_id" ref="base.partner_admin"/>
         <field name="montant">89898989</field>
     </record>
+    <record id="voyage_2" model="voyage">
+        <field name="name">V34</field>
+        <field name="voyageur_id" ref="base.partner_admin"/>
+        <field name="montant">12345</field>
+    </record>
+    <record id="voyage_3" model="voyage">
+        <field name="name">V34SS</field>
+        <field name="voyageur_id" ref="base.partner_admin"/>
+        <field name="montant">12345</field>
+    </record>
 </odoo>

@@ -16,7 +16,8 @@ Odoo Test Module.
         'contacts',
         'mail',
         "sale",
-        "purchase"
+        "purchase",
+        "hr"
     ],
     'data':[
         "security/ir.model.access.csv",
@@ -30,6 +31,7 @@ Odoo Test Module.
         "views/test_model_view.xml",
         "data/email_template_data.xml",
         "report/report_voyage_card_template.xml",
+        "report/report_inherite_hr_employe.xml",
         "report/report.xml",
         "views/sale_order_inherit.xml",
         "views/purchase_order_inherit.xml"

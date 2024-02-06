@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_test_inh"  inherit_id="hr.print_employee_badge">
+        <xpath expr="//div[@class='col-md-6']" position="before">
+            <p>
+                Your custom content here.
+            </p>
+        </xpath>
+        <xpath expr="//td[1]" position="attributes">
+            <attribute name="style">width:33%;display:none</attribute>
+        </xpath>
+    </template>
+</odoo>
