@@ -36,6 +36,9 @@ Odoo Test Module.
         "views/sale_order_inherit.xml",
         "views/purchase_order_inherit.xml"
     ],
+    'css':[
+        "static/src/style.css",
+    ],
     'demo':[],
     'application': True,
     'installable': True,

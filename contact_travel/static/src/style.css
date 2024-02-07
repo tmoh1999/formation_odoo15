@@ -1,0 +1,49 @@
+/* addons/my_module/static/src/css/custom_styles.css */
+
+/* Custom Styles for Odoo Website */
+/* This is just an example */
+
+/* Reset default margin and padding */
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Header styles */
+.o_header {
+    background-color: #333;
+    color: #fff;
+    padding: 0px;
+}
+
+/* Footer styles */
+.o_footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Main content area */
+.o_main_content {
+    padding: 0px;
+
+}
+
+/* Navigation menu */
+.o_main_nav {
+    background-color: #444;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Link styles */
+a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
