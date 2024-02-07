@@ -15,16 +15,16 @@
                                             <td width="40%" style="
                                             padding-top:0px;
                                             height:400px !important;
-                                            background-color:grey;
-                                            text-align: center; /* Horizontally center content */
-                                            vertical-align: middle; /* Vertically center content */">
+                                            background-color:blue;
+                                            ">
 
                                                     <img t-if="not o.image2"
                                                          t-att-src="'/web/static/img/placeholder.png'"
                                                          height="220"  width="200" border="1"
                                                          style="
-                display: inline-block;
-                max-width: 100%;
+
+                margin-bottom:90px;
+                margin-top:90px;
                 background-color:green;
 
                                                         "
@@ -33,16 +33,16 @@
                                                          t-att-src="'data:image2/png;base64,%s' % to_text(o.image2)"
                                                          height="220"  width="200" border="1"
                                                          style="
-                display: inline-block;
-                max-width: 100%;
+                margin-bottom:90px;
+                margin-top:90px;
                 background-color:green;
+
 
                                                         "
                                                     />
 
-
                                             </td>
-                                            <td width="60%">
+                                            <td width="60%" style="background-color:red;">
                                                 <table>
                                                     <tr>
                                                         <td colspan="3" class="text-center">

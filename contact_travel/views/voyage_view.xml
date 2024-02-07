@@ -10,6 +10,8 @@
                     <field name="dateDepart"/>
                     <field name="destination"/>
                     <field name="montant"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="monfield"/>
                     <field name="active"/>
                     <filter name = "montantsup" string="MontantSup50000" domain="[('montant','>=',4.0)]"></filter>
                     <filter name = "montantinf" string="Montantinf10000" domain="[('montant','&lt;=',10000.0)]"></filter>
@@ -74,6 +76,8 @@
 								<field name="dateDepart"/>
 								<field name="destination" attrs="{'invisible':[('active','=',False)]}"/>
                                 <field name="montant"/>
+                                <field name="currency_id" invisible="1"/>
+                                 <field name="monfield"/>
                             </group>
                         </group>
                         <group>
