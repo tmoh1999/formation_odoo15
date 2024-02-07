@@ -8,14 +8,13 @@ html,
 body {
     margin: 0;
     padding: 0;
-
 }
 
 /* Header styles */
 .o_header {
     background-color: #333;
     color: #fff;
-    padding: 0px;
+    padding: 10px;
 }
 
 /* Footer styles */
@@ -27,8 +26,7 @@ body {
 
 /* Main content area */
 .o_main_content {
-    padding: 0px;
-
+    padding: 20px;
 }
 
 /* Navigation menu */
@@ -46,4 +44,8 @@ a {
 
 a:hover {
     text-decoration: underline; /* Underline on hover */
+}
+tr {
+  page-break-inside: avoid;
+  background-color:red;
 }

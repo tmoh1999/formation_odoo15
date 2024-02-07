@@ -3,7 +3,7 @@
     <template id="report_voyage_card">
         <t t-call="web.html_container">
                 <t t-call="web.external_layout">
-                    <p style="width: 100%;text-align:center;font-size:30px;margin-bottom:50px;margin-top:-60px;">
+                    <p style="width: 100%;text-align:center;font-size:30px;margin-bottom:50px;margin-top:-60px;z-index: 9999;">
                         <span>Liste Voyages :</span>
                     </p>
                     <t t-foreach="docs" t-as="o">
@@ -12,34 +12,34 @@
                                 <div class="col-xs-8">
                                     <table class="table table-condensed">
                                         <tr>
-                                            <td width="40%" style="padding-top:0px;">
+                                            <td width="40%" style="
+                                            padding-top:0px;
+                                            height:400px !important;
+                                            background-color:grey;
+                                            text-align: center; /* Horizontally center content */
+                                            vertical-align: middle; /* Vertically center content */">
 
-                                                <div style="
-                height: 250px;
-                position:relative;
-
-                                                ">
                                                     <img t-if="not o.image2"
                                                          t-att-src="'/web/static/img/placeholder.png'"
                                                          height="220"  width="200" border="1"
                                                          style="
-                margin:0;
-                position:absolute;
-                top: 9%;
-                left: 7%;
+                display: inline-block;
+                max-width: 100%;
+                background-color:green;
+
                                                         "
                                                     />
                                                     <img t-if="o.image2"
                                                          t-att-src="'data:image2/png;base64,%s' % to_text(o.image2)"
                                                          height="220"  width="200" border="1"
                                                          style="
-                margin:0;
-                position:absolute;
-                top: 9%;
-                left: 7%;
+                display: inline-block;
+                max-width: 100%;
+                background-color:green;
+
                                                         "
                                                     />
-                                                </div>
+
 
                                             </td>
                                             <td width="60%">
